@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Intro_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QlW-Ul-4KF">
+                                <rect key="frame" x="390" y="510" width="190" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="iUk-sg-sw8"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="Seg:" destination="9pv-A4-QxB" eventType="valueChanged" id="Jhl-2S-JTh"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOR-Ku-OTm">
+                                <rect key="frame" x="35" y="513" width="79" height="25"/>
+                                <state key="normal" title="Button" image="Location"/>
+                                <connections>
+                                    <action selector="centerMapOnUser:" destination="9pv-A4-QxB" eventType="touchUpInside" id="mUx-Do-RcI"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drc-q9-z4L">
+                                <rect key="frame" x="0.0" y="44" width="600" height="458"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="drc-q9-z4L" secondAttribute="trailing" id="2YO-Dg-C5H"/>
+                            <constraint firstItem="drc-q9-z4L" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="F94-Ys-ict"/>
+                            <constraint firstItem="lOR-Ku-OTm" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="16" id="d5S-9T-2K4"/>
+                            <constraint firstItem="QlW-Ul-4KF" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="dBP-tI-Zzg"/>
+                            <constraint firstItem="QlW-Ul-4KF" firstAttribute="top" secondItem="drc-q9-z4L" secondAttribute="bottom" constant="8" symbolic="YES" id="daH-eb-WEC"/>
+                            <constraint firstItem="drc-q9-z4L" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="24" id="idG-wr-oXQ"/>
+                            <constraint firstItem="lOR-Ku-OTm" firstAttribute="bottom" secondItem="QlW-Ul-4KF" secondAttribute="bottom" id="qhw-NU-Jjp"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="QlW-Ul-4KF" secondAttribute="bottom" constant="13" id="t3u-jx-twB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="Map_Path" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="GeolocButton" destination="lOR-Ku-OTm" id="aEv-qT-Dtl"/>
+                        <outlet property="mapView" destination="drc-q9-z4L" id="HtZ-Ml-cML"/>
+                        <outlet property="s" destination="QlW-Ul-4KF" id="wgt-Fp-M7k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Intro_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mHq-XS-AOO">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="ZYx-X0-Hjz"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="zh7-Ys-FYg"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="uT9-Gh-XcW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="mHq-XS-AOO" secondAttribute="bottom" constant="187" id="MHf-GC-wvy"/>
+                            <constraint firstItem="mHq-XS-AOO" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="T77-8z-4p1"/>
+                            <constraint firstItem="mHq-XS-AOO" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="biX-zJ-vHF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Second" image="More" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="mHq-XS-AOO" id="CGE-Eh-X1J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Location" width="25" height="25"/>
+        <image name="Map_Path" width="26" height="30"/>
+        <image name="More" width="25" height="5"/>
+    </resources>
+</document>
